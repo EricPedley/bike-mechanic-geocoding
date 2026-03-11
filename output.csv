@@ -1,0 +1,4 @@
+Date Trained,Year Trained,Name,Partner,County,Sub-County,Central Place,Location Description,Geocoding Query,Notes,latitude,longitude,confidence,label,source,geocoding_error
+9/3/2025,2025,Moses onyapidi,Living Goods,,,Angurai north,Moding market ,"Moding market , Angurai north, Kenya",WBR Trained Mechanics ( Cohort 1) -Sept 2025-Busia/Bungoma,0.7532623,34.3489368,4.5001144426596745e-05,"Moding Market, D276, Kon'gololo A, Ang'urai North ward, Teso North, Busia, Kenya",nominatim,
+9/3/2025,2025,William Okitui,Living Goods,,,Angurai south,Angurai Market,"Angurai Market, Angurai south, Kenya",WBR Trained Mechanics ( Cohort 1) -Sept 2025-Busia/Bungoma,0.694565,34.361861,0.8,"Ang'urai Market, WE, Kenya",geocode.earth,
+9/3/2025,2025,Mackdonald Odhiambo,Living Goods,,,Angurai South,Kolanya Shopping center,"Kolanya Shopping center, Angurai South, Kenya",WBR Trained Mechanics ( Cohort 1) -Sept 2025-Busia/Bungoma,0.702814,34.39913,1,"Kolanya Market, WE, Kenya",geocode.earth,
