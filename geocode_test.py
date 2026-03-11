@@ -11,13 +11,11 @@ def main():
         reader = csv.DictReader(f)
         rows = list(reader)
 
-    # Extract first 3 rows for testing
-    test_rows = rows[:3]
-    print(f"Processing {len(test_rows)} test rows...\n")
+    print(f"Processing {len(rows)} rows...\n")
 
     # Extract queries - try Location Description first, then Geocoding Query as fallback
     queries = []
-    for row in test_rows:
+    for row in rows:
         loc_desc = row["Location Description"].strip()
         query = loc_desc if loc_desc else row["Geocoding Query"]
         queries.append(query)
@@ -26,7 +24,7 @@ def main():
 
     # Prepare output
     output_rows = []
-    for row, result in zip(test_rows, results):
+    for row, result in zip(rows, results):
         output_row = dict(row)
         output_row["latitude"] = result["latitude"]
         output_row["longitude"] = result["longitude"]

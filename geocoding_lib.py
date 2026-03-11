@@ -114,11 +114,19 @@ def batch_geocode(queries: List[str], api_key: str) -> List[Dict]:
     results: List[Optional[Dict]] = [None] * len(queries)
     ge_pending: List[int] = []  # indices that need Geocode.Earth fallback
 
-    # Pass 1: try Nominatim for all queries
+    # Pass 1: try Nominatim for all queries (rate limited to 1 req/sec)
+    last_nominatim = 0.0
     for i, query in enumerate(queries):
         cleaned = " ".join(query.split())
         print(f"[nominatim] {i+1}/{len(queries)}: {query}")
+
+        # Nominatim requires max 1 req/sec
+        elapsed = time.monotonic() - last_nominatim
+        if elapsed < 1.0:
+            time.sleep(1.0 - elapsed)
+
         try:
+            last_nominatim = time.monotonic()
             result = _geocode_nominatim(cleaned)
             if result:
                 results[i] = result
